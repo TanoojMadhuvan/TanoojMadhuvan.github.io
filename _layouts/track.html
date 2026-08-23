@@ -1,0 +1,37 @@
+---
+layout: default
+---
+<article class="track" style="--track-color: {{ page.color | default: 'var(--accent2)' }};">
+  <header class="track-header">
+    <span class="track-icon-badge">{% include track-icon.html slug=page.slug %}</span>
+    <div class="track-header-text">
+      <p class="eyebrow">Research track</p>
+      <h1>{{ page.title }}</h1>
+    </div>
+    {% if page.status %}<span class="status-badge">{{ page.status }}</span>{% endif %}
+  </header>
+
+  <div class="track-intro">
+    {{ content }}
+  </div>
+
+  {% assign related_projects = site.projects | where_exp: "proj", "proj.tracks contains page.slug" | sort: "index" %}
+  {% if related_projects.size > 0 %}
+  <p class="cross-link-line">
+    <span class="cross-link-label">Spans:</span>
+    {% for proj in related_projects %}<a class="cross-link" href="{{ proj.url | relative_url }}">{{ proj.title }}</a>{% unless forloop.last %}<span class="cross-link-sep">&middot;</span>{% endunless %}{% endfor %}
+  </p>
+  {% endif %}
+
+  <h2 class="section-label">Weekly posts</h2>
+  {% assign track_posts = site.posts | where_exp: "post", "post.tracks contains page.slug" | sort: "date" | reverse %}
+  {% if track_posts.size > 0 %}
+    <div class="post-list">
+      {% for post in track_posts %}
+        {% include post-list-item.html post=post %}
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="empty-note">No posts yet for this track — check back after the first weekly update.</p>
+  {% endif %}
+</article>

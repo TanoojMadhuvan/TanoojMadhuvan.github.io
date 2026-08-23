@@ -1,0 +1,38 @@
+<svg class="pipeline-diagram" viewBox="0 0 600 152" role="img" aria-label="Five-stage pipeline: Instruction Fetch, Instruction Decode, Execute, Memory Access, Write Back">
+  <defs>
+    <marker id="pipe-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path class="pipe-arrowhead" d="M0 0L10 5L0 10z"/>
+    </marker>
+  </defs>
+  <g class="pipe-box-group">
+    <rect class="pipe-box" x="4" y="24" width="96" height="72" rx="6"/>
+    <rect class="pipe-box" x="128" y="24" width="96" height="72" rx="6"/>
+    <rect class="pipe-box" x="252" y="24" width="96" height="72" rx="6"/>
+    <rect class="pipe-box" x="376" y="24" width="96" height="72" rx="6"/>
+    <rect class="pipe-box" x="500" y="24" width="96" height="72" rx="6"/>
+  </g>
+  <g class="pipe-label-group" text-anchor="middle">
+    <text class="pipe-label" x="52" y="70">IF</text>
+    <text class="pipe-label" x="176" y="70">ID</text>
+    <text class="pipe-label" x="300" y="70">EX</text>
+    <text class="pipe-label" x="424" y="70">MEM</text>
+    <text class="pipe-label" x="548" y="70">WB</text>
+  </g>
+  <g class="pipe-sublabel-group" text-anchor="middle">
+    <text class="pipe-sublabel" x="52" y="114">Instruction</text>
+    <text class="pipe-sublabel" x="52" y="129">Fetch</text>
+    <text class="pipe-sublabel" x="176" y="114">Instruction</text>
+    <text class="pipe-sublabel" x="176" y="129">Decode</text>
+    <text class="pipe-sublabel" x="300" y="114">Execute</text>
+    <text class="pipe-sublabel" x="424" y="114">Memory</text>
+    <text class="pipe-sublabel" x="424" y="129">Access</text>
+    <text class="pipe-sublabel" x="548" y="114">Write</text>
+    <text class="pipe-sublabel" x="548" y="129">Back</text>
+  </g>
+  <g class="pipe-arrow-group">
+    <line x1="101" y1="60" x2="126" y2="60" marker-end="url(#pipe-arrow)"/>
+    <line x1="225" y1="60" x2="250" y2="60" marker-end="url(#pipe-arrow)"/>
+    <line x1="349" y1="60" x2="374" y2="60" marker-end="url(#pipe-arrow)"/>
+    <line x1="473" y1="60" x2="498" y2="60" marker-end="url(#pipe-arrow)"/>
+  </g>
+</svg>

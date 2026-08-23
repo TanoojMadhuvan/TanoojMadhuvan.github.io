@@ -1,0 +1,88 @@
+# ---------------------------------------------------------------------------
+# Site identity — edit these
+# ---------------------------------------------------------------------------
+title: "Tanooj Kanike"
+tagline: "Computer architecture & hardware engineering"
+description: >-
+  Personal engineering log: building a RISC-V processor from the ground up
+  (assembler, single-cycle core, pipelining) and pushing it further through
+  weekly research tracks — branch prediction, out-of-order execution, PPA
+  analysis, verification, KV-cache accelerators, and systolic arrays.
+
+email: tanoojk.kanike@gmail.com
+github_username: TanoojMadhuvan
+linkedin_username: "REPLACE_ME"        # e.g. "tanooj-kanike" from linkedin.com/in/tanooj-kanike
+
+# GitHub Pages user site — served at the bare domain, so baseurl must stay empty.
+# Repo on GitHub MUST be named exactly "TanoojMadhuvan.github.io".
+url: "https://TanoojMadhuvan.github.io"
+baseurl: ""
+
+# ---------------------------------------------------------------------------
+# Build config — safe to leave as-is
+# ---------------------------------------------------------------------------
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+sass:
+  style: compressed
+
+permalink: /blog/:year/:month/:day/:title/
+
+collections:
+  tracks:
+    output: true
+    permalink: /tracks/:path/
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "tracks"
+    values:
+      layout: "track"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+  - scope:
+      path: ""
+    values:
+      layout: "page"
+
+# Ordered list of active research tracks. Each `slug` must match a file in
+# _tracks/<slug>.md, and posts tag themselves into it via the `tracks:` array
+# in their front matter.
+tracks_order:
+  - branch-prediction
+  - out-of-order
+  - ppa-analysis
+  - verification
+  - kv-cache
+  - systolic-array
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - node_modules

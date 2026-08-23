@@ -1,0 +1,37 @@
+---
+layout: default
+---
+{% assign proj = site.projects | where: "slug", page.project | first %}
+<article class="post">
+  <header class="post-header">
+    <div class="post-badges">
+      {% if proj %}
+      <a class="track-badge" href="{{ proj.url | relative_url }}">{{ proj.title }}</a>
+      {% endif %}
+      {% for slug in page.tracks %}
+        {% assign t = site.tracks | where: "slug", slug | first %}
+        {% if t %}<a class="track-chip" href="{{ t.url | relative_url }}" style="--badge-c: {{ t.color }};">{{ t.title }}</a>{% endif %}
+      {% endfor %}
+    </div>
+    <h1>{{ page.title }}</h1>
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+  </header>
+
+  {% if page.image %}
+  <figure class="post-cover">
+    <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title }}">
+    {% if page.image_caption %}<figcaption>{{ page.image_caption }}</figcaption>{% endif %}
+  </figure>
+  {% endif %}
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+</article>
+
+<nav class="post-nav">
+  <a href="{{ '/blog/' | relative_url }}">&larr; Back to all posts</a>
+  {% if proj %}
+  <a href="{{ proj.url | relative_url }}">Back to project &rarr;</a>
+  {% endif %}
+</nav>

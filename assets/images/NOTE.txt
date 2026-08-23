@@ -1,0 +1,4 @@
+Put post images here, e.g. one subfolder per track: assets/images/<track-slug>/.
+Reference them from a post with standard markdown:
+
+![Alt text](/assets/images/<track-slug>/your-image.png)

@@ -1,0 +1,3 @@
+<!-- usage: include icon-img.html with name= (e.g. "06-target") and optional color= ("teal" default or "orange") -->
+{% assign icon_color = include.color | default: "teal" %}
+<img class="icon-img" src="{{ '/assets/images/' | append: include.name | append: '-' | append: icon_color | append: '.png' | relative_url }}" alt="" loading="lazy">

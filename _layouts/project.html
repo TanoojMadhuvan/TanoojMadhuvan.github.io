@@ -1,0 +1,39 @@
+---
+layout: default
+---
+<article class="track">
+  <header class="track-header">
+    <span class="track-icon-badge">{% include icon-img.html name=page.icon %}</span>
+    <div class="track-header-text">
+      <p class="eyebrow">Project {{ page.index }} &middot; {{ page.date_range }}</p>
+      <h1>{{ page.title }}</h1>
+    </div>
+  </header>
+
+  <div class="track-intro">
+    {{ content }}
+  </div>
+
+  {% assign related_tracks = page.tracks %}
+  {% if related_tracks.size > 0 %}
+  <p class="cross-link-line">
+    <span class="cross-link-label">Touches:</span>
+    {% for slug in related_tracks %}
+      {% assign t = site.tracks | where: "slug", slug | first %}
+      {% if t %}<a class="cross-link" href="{{ t.url | relative_url }}">{{ t.title }}</a>{% unless forloop.last %}<span class="cross-link-sep">&middot;</span>{% endunless %}{% endif %}
+    {% endfor %}
+  </p>
+  {% endif %}
+
+  <h2 class="section-label">Posts</h2>
+  {% assign project_posts = site.posts | where: "project", page.slug | sort: "date" | reverse %}
+  {% if project_posts.size > 0 %}
+    <div class="post-list">
+      {% for post in project_posts %}
+        {% include post-list-item.html post=post %}
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="empty-note">No posts yet for this project — check back after the first update.</p>
+  {% endif %}
+</article>

@@ -1,0 +1,27 @@
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <nav class="site-nav">
+      <a href="{{ '/about/' | relative_url }}">About</a>
+      <a href="{{ '/foundation/' | relative_url }}">Foundation</a>
+      <a href="{{ '/projects/' | relative_url }}">Projects</a>
+      <a href="{{ '/tracks/' | relative_url }}">Tracks</a>
+      <a href="{{ '/blog/' | relative_url }}">Blog</a>
+      <a href="{{ '/resume/' | relative_url }}">Resume</a>
+      <span class="nav-divider" aria-hidden="true"></span>
+      <a class="icon-link" href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+        {% include social-icon.html name="github" %}
+      </a>
+      <a class="icon-link" href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+        {% include social-icon.html name="linkedin" %}
+      </a>
+      <a class="icon-link" href="mailto:{{ site.email }}" aria-label="Email" title="Email">
+        {% include social-icon.html name="email" %}
+      </a>
+      <button id="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M12 4.5a1 1 0 0 1-1-1V2a1 1 0 1 1 2 0v1.5a1 1 0 0 1-1 1Zm0 15a1 1 0 0 1 1 1V22a1 1 0 1 1-2 0v-1.5a1 1 0 0 1 1-1ZM4.5 12a1 1 0 0 1-1 1H2a1 1 0 1 1 0-2h1.5a1 1 0 0 1 1 1Zm17.5-1h-1.5a1 1 0 1 0 0 2H22a1 1 0 1 0 0-2ZM6.34 7.76 5.28 6.7a1 1 0 0 1 1.42-1.42l1.06 1.06a1 1 0 1 1-1.42 1.42Zm11.32 11.32-1.06-1.06a1 1 0 0 1 1.42-1.42l1.06 1.06a1 1 0 0 1-1.42 1.42ZM6.34 16.24a1 1 0 0 1 1.42 1.42l-1.06 1.06a1 1 0 0 1-1.42-1.42Zm11.32-11.32a1 1 0 0 1 1.42 1.42l-1.06 1.06a1 1 0 1 1-1.42-1.42ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M20.742 13.045a8.088 8.088 0 0 1-2.588.422 8.135 8.135 0 0 1-8.135-8.135c0-.887.146-1.746.417-2.55a.75.75 0 0 0-.958-.955 10.05 10.05 0 1 0 12.222 12.184.75.75 0 0 0-.958-.966Z"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>

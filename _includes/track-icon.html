@@ -1,0 +1,53 @@
+<!-- usage: include track-icon.html with a slug= param -->
+{% case include.slug %}
+{% when "branch-prediction" %}
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <circle cx="6" cy="6" r="2.1"/>
+  <circle cx="6" cy="18" r="2.1"/>
+  <circle cx="18" cy="12" r="2.1"/>
+  <path d="M6 8.1V15.9"/>
+  <path d="M8.1 7 15.9 11"/>
+  <path d="M8.1 17 15.9 13"/>
+</svg>
+{% when "out-of-order" %}
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="M3 6h6l9 12"/>
+  <path d="M21 6h-4"/>
+  <path d="M17 6l3-3M17 6l3 3"/>
+  <path d="M3 18h6l9-12"/>
+  <path d="M21 18h-4"/>
+  <path d="M17 18l3-3M17 18l3 3"/>
+</svg>
+{% when "ppa-analysis" %}
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <rect x="6" y="6" width="12" height="12" rx="1"/>
+  <path d="M9 3v3M12 3v3M15 3v3M9 18v3M12 18v3M15 18v3M3 9h3M3 12h3M3 15h3M18 9h3M18 12h3M18 15h3"/>
+</svg>
+{% when "verification" %}
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/>
+  <path d="M9 12l2 2 4-4"/>
+</svg>
+{% when "kv-cache" %}
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <ellipse cx="12" cy="5" rx="7" ry="2.4"/>
+  <path d="M5 5v6c0 1.3 3.1 2.4 7 2.4s7-1.1 7-2.4V5"/>
+  <path d="M5 11v6c0 1.3 3.1 2.4 7 2.4s7-1.1 7-2.4v-6"/>
+</svg>
+{% when "systolic-array" %}
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true">
+  <rect x="3" y="3" width="5" height="5" rx="0.5"/>
+  <rect x="9.5" y="3" width="5" height="5" rx="0.5"/>
+  <rect x="16" y="3" width="5" height="5" rx="0.5"/>
+  <rect x="3" y="9.5" width="5" height="5" rx="0.5"/>
+  <rect x="9.5" y="9.5" width="5" height="5" rx="0.5"/>
+  <rect x="16" y="9.5" width="5" height="5" rx="0.5"/>
+  <rect x="3" y="16" width="5" height="5" rx="0.5"/>
+  <rect x="9.5" y="16" width="5" height="5" rx="0.5"/>
+  <rect x="16" y="16" width="5" height="5" rx="0.5"/>
+</svg>
+{% else %}
+<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <circle cx="12" cy="12" r="8"/>
+</svg>
+{% endcase %}

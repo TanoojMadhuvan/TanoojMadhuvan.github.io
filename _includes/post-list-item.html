@@ -1,0 +1,16 @@
+<!-- expects `post` in scope -->
+{% assign proj = site.projects | where: "slug", post.project | first %}
+<article class="post-item">
+  <div class="post-item-meta">
+    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+    {% if proj %}
+    <a class="track-badge" href="{{ proj.url | relative_url }}">{{ proj.title }}</a>
+    {% endif %}
+    {% for slug in post.tracks %}
+      {% assign t = site.tracks | where: "slug", slug | first %}
+      {% if t %}<a class="track-chip" href="{{ t.url | relative_url }}" style="--badge-c: {{ t.color }};">{{ t.title }}</a>{% endif %}
+    {% endfor %}
+  </div>
+  <h3 class="post-item-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+  {% if post.summary %}<p class="post-item-summary">{{ post.summary }}</p>{% endif %}
+</article>

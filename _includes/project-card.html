@@ -1,0 +1,14 @@
+<!-- usage: include project-card.html with project= (a doc from site.projects) -->
+<div class="project-card">
+  <div class="project-card-body">
+    <span class="project-icon-badge">{% include icon-img.html name=include.project.icon %}</span>
+    <p class="project-eyebrow">Project {{ include.project.index }} &middot; {{ include.project.date_range }}</p>
+    <h3 class="project-title">{{ include.project.title }}</h3>
+    <p class="project-subtitle">{{ include.project.subtitle }}</p>
+    <p class="project-desc">{{ include.project.summary | default: include.project.description }}</p>
+    <div class="tech-tags">
+      {% for tag in include.project.tags %}<span class="tech-tag">{{ tag }}</span>{% endfor %}
+    </div>
+  </div>
+  <a class="project-link" href="{{ include.project.url | relative_url }}">View details &rarr;</a>
+</div>

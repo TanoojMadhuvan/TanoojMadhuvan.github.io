@@ -1,0 +1,16 @@
+<!-- one tile of the scrolling waveform; usage: include with id= (unique per call — SVG ids must not repeat in the page) -->
+<svg class="wf-tile" viewBox="0 0 360 120" width="360" height="120" preserveAspectRatio="none" aria-hidden="true">
+  <defs>
+    <pattern id="{{ include.id }}" width="6" height="6" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="6" class="wave-hatch-line"/>
+    </pattern>
+  </defs>
+  <path class="wave-clk" d="M0 12 H15 V28 H30 V12 H45 V28 H60 V12 H75 V28 H90 V12 H105 V28 H120 V12 H135 V28 H150 V12 H165 V28 H180 V12 H195 V28 H210 V12 H225 V28 H240 V12 H255 V28 H270 V12 H285 V28 H300 V12 H315 V28 H330 V12 H345 V28 H360 V12"/>
+  <path class="wave-signal" d="M0 53 H70 V37 H95 V53 H150 V37 H170 V53 H230 V37 H250 V53 H360"/>
+  <path class="wave-signal" d="M0 78 H110 V62 H135 V78 H260 V62 H280 V78 H360"/>
+  <path class="wave-signal" d="M0 87 H40 V103 H65 V87 H120"/>
+  <rect class="wave-unknown" x="120" y="87" width="34" height="16" fill="url(#{{ include.id }})"/>
+  <path class="wave-signal" d="M154 87 H210 V103 H235 V87 H300"/>
+  <rect class="wave-unknown" x="300" y="87" width="28" height="16" fill="url(#{{ include.id }})"/>
+  <path class="wave-signal" d="M328 87 H360"/>
+</svg>

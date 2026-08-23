@@ -1,0 +1,121 @@
+---
+layout: default
+---
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-text">
+      <p class="terminal-line" id="tw-greeting"><span class="prompt">&gt;_</span> <span class="tw-text">Hello, I'm</span></p>
+      <h1 class="hero-name" id="tw-name"><span class="tw-text">{{ site.title }}</span></h1>
+      <script>
+        (function () {
+          var KEY = "heroTyped";
+          var greetEl = document.querySelector("#tw-greeting .tw-text");
+          var nameEl = document.querySelector("#tw-name .tw-text");
+          if (!greetEl || !nameEl || sessionStorage.getItem(KEY)) { return; }
+          var greetFull = greetEl.textContent;
+          var nameFull = nameEl.textContent;
+          greetEl.textContent = "";
+          nameEl.textContent = "";
+          greetEl.classList.add("tw-cursor");
+          var i = 0;
+          function typeGreet() {
+            if (i <= greetFull.length) {
+              greetEl.textContent = greetFull.slice(0, i);
+              i++;
+              setTimeout(typeGreet, 38);
+            } else {
+              greetEl.classList.remove("tw-cursor");
+              nameEl.classList.add("tw-cursor");
+              i = 0;
+              setTimeout(typeName, 200);
+            }
+          }
+          function typeName() {
+            if (i <= nameFull.length) {
+              nameEl.textContent = nameFull.slice(0, i);
+              i++;
+              setTimeout(typeName, 55);
+            } else {
+              sessionStorage.setItem(KEY, "1");
+              setTimeout(function () { nameEl.classList.remove("tw-cursor"); }, 900);
+            }
+          }
+          typeGreet();
+        })();
+      </script>
+      {% if page.role %}<p class="hero-role">{{ page.role }}</p>{% endif %}
+      <div class="hero-bio">
+        {{ content }}
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-solid" href="{{ '/tracks/' | relative_url }}">VIEW TRACKS <span class="btn-arrow">&rarr;</span></a>
+        <a class="btn btn-outline" href="{{ '/assets/files/resume.pdf' | relative_url }}" download>DOWNLOAD RESUME <span class="btn-arrow">&darr;</span></a>
+      </div>
+      <div class="social-row">
+        <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">{% include social-icon.html name="github" %} GitHub</a>
+        <a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener">{% include social-icon.html name="linkedin" %} LinkedIn</a>
+        <a href="mailto:{{ site.email }}">{% include social-icon.html name="email" %} {{ site.email }}</a>
+      </div>
+    </div>
+    <div class="hero-diagram-col" aria-hidden="true">
+      <p class="diagram-label">// 5-STAGE PIPELINE</p>
+      {% include pipeline-diagram.html %}
+      {% include waveform-diagram.html %}
+    </div>
+  </div>
+</section>
+
+{% if page.stats %}
+<section class="stat-strip">
+  {% for s in page.stats %}
+  <div class="stat">
+    <span class="stat-icon-box">{% include icon-img.html name=s.icon color=s.color %}</span>
+    <div class="stat-body">
+      <div class="stat-value">{{ s.value }}</div>
+      <div class="stat-label">{{ s.label }}</div>
+    </div>
+  </div>
+  {% endfor %}
+</section>
+{% endif %}
+
+<section class="projects">
+  <div class="section-header">
+    <h2 class="section-label">Projects</h2>
+    <a class="text-link" href="{{ '/projects/' | relative_url }}">View all projects &rarr;</a>
+  </div>
+  {% assign all_projects = site.projects | sort: "index" %}
+  <div class="project-carousel">
+    <div class="project-track">
+      {% for p in all_projects %}{% include project-card.html project=p %}{% endfor %}
+      {% for p in all_projects %}{% include project-card.html project=p %}{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="highlights">
+  <h2 class="section-label">RISC-V Processor — Highlights</h2>
+  {% if page.highlights %}
+  <ul class="highlight-list">
+    {% for h in page.highlights %}<li>{{ h }}</li>{% endfor %}
+  </ul>
+  {% endif %}
+  <a class="text-link" href="{{ '/foundation/' | relative_url }}">Full technical writeup &rarr;</a>
+</section>
+
+<section class="recent-posts">
+  <div class="section-header">
+    <h2 class="section-label">Recent posts</h2>
+    <a class="text-link" href="{{ '/blog/' | relative_url }}">All posts &rarr;</a>
+  </div>
+  {% assign recent = site.posts | sort: "date" | reverse | slice: 0, 3 %}
+  {% if recent.size > 0 %}
+    <div class="post-list">
+      {% for post in recent %}
+        {% include post-list-item.html post=post %}
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="empty-note">No posts yet — the first weekly update will show up here.</p>
+  {% endif %}
+</section>

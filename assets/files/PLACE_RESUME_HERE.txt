@@ -1,0 +1,5 @@
+Put your real resume PDF here, named `resume.pdf`.
+
+The `/resume` page's "Download PDF" button links to `/assets/files/resume.pdf`.
+This README itself is excluded from the built site (see `exclude:` in
+`_config.yml`).
