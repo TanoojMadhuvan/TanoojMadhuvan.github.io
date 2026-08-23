@@ -137,7 +137,7 @@ GitHub Pages' supported list: `jekyll-feed`, `jekyll-seo-tag`,
 - [ ] Write the homepage intro paragraph (`index.md`)
 - [ ] Fill in the highlight bullets and stat-strip values in `index.md`'s
       front matter (`highlights:` and `stats:`)
-- [ ] Set `linkedin_username` in `_config.yml`
+- [x] Set `linkedin_username` in `_config.yml`
 - [ ] Fill in `about.md` and `resume.md`
 - [ ] Drop your real `resume.pdf` in `assets/files/`
 - [x] Confirm the repo link in `foundation.md` — `github.com/tanooj-comp-arch/foundation-core`
