@@ -1,8 +1,8 @@
 ---
 title: "Memory Hierarchy Sim"
 slug: memory-hierarchy-sim
-index: "01"
-date_range: "Feb 17–Mar 9, 2026"
+index: "02"
+date_range: "Apr 6–20, 2026"
 icon: 09-database
 subtitle: "Cache & Coherence Simulator"
 summary: "A configurable cache-hierarchy simulator, motivated by KV-cache access patterns."

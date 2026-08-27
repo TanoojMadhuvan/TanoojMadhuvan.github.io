@@ -1,7 +1,7 @@
 ---
 title: "SysMAC"
 slug: sysmac
-index: "05"
+index: "01"
 date_range: "Mar 9–30, 2026"
 icon: 04-memory-grid
 subtitle: "Systolic MAC Array"
@@ -10,11 +10,10 @@ description: "A small weight-stationary and output-stationary systolic MAC array
 tags: [SystemVerilog, "C++", Verilator, Yosys, OpenSTA]
 tracks: [ppa-analysis, verification]
 ---
-A side project run alongside the main roadmap: a small weight-stationary and
-output-stationary systolic MAC array, exploring the same architectural
-principle TPUv1 used at datacenter scale — a systolic dataflow plus INT8
-quantization — at a toy 4x4 scale, synthesized and measured with the same
-category of tools real physical-design engineers use.
+A small weight-stationary and output-stationary systolic MAC array, exploring
+the same architectural principle TPUv1 used at datacenter scale — a systolic
+dataflow plus INT8 quantization — at a toy 4x4 scale, synthesized and
+measured with the same category of tools real physical-design engineers use.
 
 The actual finding is a **PPA comparison between two dataflow variants** of
 the same array, held to the same PE count and clock target: output-stationary

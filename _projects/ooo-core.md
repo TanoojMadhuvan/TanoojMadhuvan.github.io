@@ -2,7 +2,7 @@
 title: "OoO Core (RV32IM)"
 slug: ooo-core
 index: "03"
-date_range: "Apr 13–May 23, 2026"
+date_range: "Apr 27–Jun 1, 2026"
 icon: 08-layers
 subtitle: "Out-of-Order RISC-V Core"
 summary: "Extending the in-order pipeline toward out-of-order issue and dynamic scheduling."
