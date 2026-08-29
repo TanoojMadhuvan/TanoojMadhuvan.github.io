@@ -16,25 +16,9 @@ two real implementations, not one.
 Wired via `generate`, `weight_in[(i*N+j)*DATA_W +: DATA_W]` loads directly
 into PE(i,j) (parallel load, not a serial shift-in — simpler for v1),
 `act_in[i*DATA_W +: DATA_W]` enters row `i` and flows rightward, `psum_in` at
-row 0 is tied to zero and partial sums flow downward:
-
-```systemverilog
-for (i = 0; i < N; i++) begin : gen_row
-    for (j = 0; j < N; j++) begin : gen_col
-        mac_pe #(.DATA_W(DATA_W), .ACC_W(ACC_W)) pe (
-            .clk(clk), .rst_n(rst_n),
-            .weight_load(weight_load),
-            .weight_in  (weight_in[(i*N+j)*DATA_W +: DATA_W]),
-            .act_in     (act_wire[i][j]),
-            .act_out    (act_wire[i][j+1]),
-            .psum_in    (psum_wire[i][j]),
-            .psum_out   (psum_wire[i+1][j]),
-            .valid_in   (valid_wire[i][j]),
-            .valid_out  (valid_wire[i][j+1])
-        );
-    end
-end
-```
+row 0 is tied to zero and partial sums flow downward through each column —
+the instantiation loop itself, and why `weight_in` needs that part-select at
+all, is worth looking at directly below.
 
 ## Toolchain wall #2: no array-typed ports, at all
 
