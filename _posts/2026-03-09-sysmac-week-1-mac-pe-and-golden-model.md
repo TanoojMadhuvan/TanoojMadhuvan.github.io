@@ -28,6 +28,11 @@ again for the whole matmul.
 
 ## The atomic tile: `mac_pe.sv`
 
+<figure>
+  <img src="/assets/images/sysmac/mac-pe-weight-stationary.png" alt="Diagram of a weight-stationary PE(i,j): a weight register loaded once with w = B[i][j] and held stationary, feeding a datapath that every cycle computes psum_out = psum_in + a_in × w, with a_in arriving from the left PE and passed through to a_out, and psum_in/psum_out flowing vertically to the PE above/below">
+  <figcaption>Weight-stationary PE: the weight register loads once and never changes; activation and partial sum are what move, left-to-right and top-to-bottom respectively.</figcaption>
+</figure>
+
 Single INT8 x INT8 -> 32-bit-accumulate processing element. Weight loads once
 via `weight_load` and sits in a register; activations stream left-to-right
 (`act_in` -> `act_out`); partial sums stream top-to-bottom (`psum_in` ->

@@ -116,6 +116,11 @@ second dataflow needs to exist before synthesis means anything. Added
 same workload (4x4 @ 4x4 matmul) as weight-stationary, so the eventual area/
 timing/power numbers compare apples to apples.
 
+<figure>
+  <img src="/assets/images/sysmac/mac-pe-output-stationary.png" alt="Diagram of an output-stationary PE(i,j): an accumulator register holding C[i][j] that never leaves the PE, fed every cycle by acc = acc + a_in × b_in, with both a_in (activation, from the left PE) and b_in (weight, from the PE above) latched and passed on to a_out and b_out respectively">
+  <figcaption>Output-stationary PE: the accumulator is what's held fixed this time — both activation and weight now stream through and get passed along, rather than one operand sitting still.</figcaption>
+</figure>
+
 The structural difference matters for what's coming next week: in
 output-stationary, the accumulator stays local (becomes one output element)
 while **both** activation and weight stream through the PE — neither operand
