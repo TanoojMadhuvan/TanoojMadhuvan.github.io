@@ -43,8 +43,14 @@ syntax error from Yosys (0.64) — confirmed with isolated test cases, not
 assumed, that its Verilog frontend doesn't parse array-typed ports of *any*
 kind, unpacked or packed-multi-dim alike. Only single flat packed vectors
 work. So every array port here is a flat vector sliced with `+:`
-part-selects inside the module, and the C++ testbenches pack/unpack it by
-hand:
+part-selects inside the module:
+
+<figure>
+  <img src="/assets/images/sysmac/mac-array-generate-block.png" alt="Code screenshot of mac_array.sv's generate block: nested for loops instantiate mac_pe for each row i and column j, wiring weight_in to weight_in[(i*N+j)*DATA_W +: DATA_W] and chaining act_wire and psum_wire between neighboring tiles">
+  <figcaption>Each <code>mac_pe</code> instance pulls its own weight out of the flat <code>weight_in</code> vector with a part-select at instantiation time — <code>weight_in[(i*N+j)*DATA_W +: DATA_W]</code> — since the port itself carries no row/column structure the tool can see.</figcaption>
+</figure>
+
+...and the C++ testbenches pack/unpack that same flat vector by hand:
 
 ```cpp
 // weight_in is a flat N*N*DATA_W-bit packed vector, not array-typed — see

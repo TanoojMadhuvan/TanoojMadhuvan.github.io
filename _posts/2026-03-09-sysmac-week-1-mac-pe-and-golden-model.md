@@ -38,19 +38,10 @@ via `weight_load` and sits in a register; activations stream left-to-right
 (`act_in` -> `act_out`); partial sums stream top-to-bottom (`psum_in` ->
 `psum_out`):
 
-```systemverilog
-always_ff @(posedge clk or negedge rst_n) begin
-    if (!rst_n) begin
-        act_out   <= '0;
-        psum_out  <= '0;
-        valid_out <= 1'b0;
-    end else begin
-        act_out   <= act_in;
-        psum_out  <= psum_in + (act_in * weight_reg);
-        valid_out <= valid_in;
-    end
-end
-```
+<figure>
+  <img src="/assets/images/sysmac/mac-pe-register-block.png" alt="Code screenshot of mac_pe.sv's main always_ff block: on reset, act_out, psum_out, and valid_out clear to zero; otherwise act_out latches act_in, psum_out latches psum_in plus act_in times weight_reg, and valid_out latches valid_in">
+  <figcaption><code>mac_pe.sv</code>'s main clocked block: activation and valid pass straight through a register each cycle, while psum accumulates the local multiply on the way through.</figcaption>
+</figure>
 
 `valid` travels alongside `act`/`psum` so downstream PEs know when the data
 passing through is real versus a reset-time bubble — this becomes load-bearing
@@ -64,16 +55,10 @@ accumulate against a 64-bit `longint` computed *before* truncation into the
 32-bit register — checking the already-wrapped value would be checking the
 exact number that already lost the information needed to catch overflow:
 
-```systemverilog
-`ifndef SYNTHESIS
-if (valid_in) begin
-    automatic longint signed ext_sum;
-    ext_sum = longint'(psum_in) + longint'(act_in) * longint'(weight_reg);
-    assert (ext_sum >= -(64'sd1 <<< (ACC_W-1)) && ext_sum <= (64'sd1 <<< (ACC_W-1)) - 1)
-        else $error("mac_pe: accumulator overflow at time %0t", $time);
-end
-`endif
-```
+<figure>
+  <img src="/assets/images/sysmac/mac-pe-overflow-assertion.png" alt="Code screenshot of mac_pe.sv's overflow assertion: guarded by ifndef SYNTHESIS, it recomputes the accumulate as a 64-bit signed longint ext_sum before truncation and asserts it fits the signed ACC_W-bit range, else errors with mac_pe: accumulator overflow at time">
+  <figcaption>The overflow check, stripped out before synthesis ever sees it: the sum is recomputed in 64 bits so overflow can be caught before the real 32-bit add truncates it away.</figcaption>
+</figure>
 
 Worth being precise about what this does and doesn't prove: it's a
 **protocol/correctness invariant**, not a functional check. It catches "the
