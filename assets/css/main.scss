@@ -822,6 +822,30 @@ a.track-badge:hover { text-decoration: none; filter: brightness(0.95); }
   border-left: 3px solid var(--border);
   color: var(--text-muted);
 }
+.post-content table {
+  display: block;
+  overflow-x: auto;
+  width: max-content;
+  max-width: 100%;
+  margin: 1.6em 0;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+.post-content th,
+.post-content td {
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  text-align: left;
+  font-variant-numeric: tabular-nums;
+}
+.post-content th {
+  background: var(--bg-raised);
+  font-weight: 650;
+  color: var(--text);
+}
+.post-content tbody tr:nth-child(even) td {
+  background: color-mix(in srgb, var(--bg-raised) 55%, transparent);
+}
 
 .post-nav {
   display: flex;
