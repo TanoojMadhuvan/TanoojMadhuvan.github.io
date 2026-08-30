@@ -2,7 +2,7 @@
 title: "Week 3: Real numbers — Nangate45 synthesis and OpenSTA timing/power"
 date: 2026-03-23
 project: sysmac
-tracks: [ppa-analysis]
+tracks: [ppa-analysis, systolic-array]
 summary: "Generic gate counts disagree with real Nangate45 area on which dataflow is smaller — and output-stationary turns out ~38% lower power despite near-identical area."
 ---
 This is the week the project stops being "does it compute the right matmul"

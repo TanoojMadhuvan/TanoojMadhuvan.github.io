@@ -1,17 +1,19 @@
 ---
 title: Systolic Array
 slug: systolic-array
-summary: A systolic-array matrix-multiply unit as a memory-mapped accelerator off the core.
+summary: A weight-stationary vs. output-stationary systolic MAC array, compared on real synthesized PPA numbers.
 status: Active
 color: "#2FA8B8"
 ---
 Matrix multiplication dominates both classic DSP and ML inference workloads.
-This track builds a systolic array (REPLACE_ME: dimensions, e.g. a weight-
-stationary N×N PE grid) as a memory-mapped accelerator the core can offload
-matmuls to, and measures the speedup versus running the same workload on the
-core alone.
+This track builds a small systolic MAC array — a 4x4 weight-stationary PE
+grid (TPUv1-style) and a second output-stationary variant sized for a fair
+comparison — and pushes both through a real Yosys/OpenROAD/OpenSTA flow to
+get actual area, power, and measured cycle counts, not just simulated
+correctness. See [SysMAC](/projects/sysmac/) for the full four-week build.
 
-**Why:** REPLACE_ME (e.g. "systolic arrays are the backbone of accelerators
-like the TPU — wanted to understand the PE design and dataflow tradeoffs by
-building one and wiring it into a real processor, not just simulating it in
-isolation").
+**Why:** dataflow choice — which operand stays stationary in the array — is
+a real architectural tradeoff that's easy to state in the abstract and hard
+to actually measure. Wanted to build both variants and run both through the
+same synthesis/STA flow on the same workload, rather than simulate one and
+assume how the other would compare.

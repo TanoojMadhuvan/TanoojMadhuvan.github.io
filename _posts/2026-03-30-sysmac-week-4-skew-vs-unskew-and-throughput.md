@@ -2,7 +2,7 @@
 title: "Week 4: Skew vs. unskew — correcting a claim and measuring real throughput"
 date: 2026-03-30
 project: sysmac
-tracks: [ppa-analysis, verification]
+tracks: [ppa-analysis, verification, systolic-array]
 summary: "Weight-stationary's 'tolerates unskewed feeding' claim only held because every test so far held a value constant. Real back-to-back streaming needed the same row-skewed timing output-stationary required from day one — and the corrected result is a genuine 10-vs-14-cycle throughput measurement."
 ---
 Closing out this arc with a correction, not just a new result. Week 2 said

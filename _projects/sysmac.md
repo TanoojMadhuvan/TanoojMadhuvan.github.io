@@ -8,7 +8,7 @@ subtitle: "Systolic MAC Array"
 summary: "A weight-stationary vs. output-stationary PPA comparison on a small systolic MAC array, synthesized through Yosys/Nangate45 and measured with OpenSTA."
 description: "A small weight-stationary and output-stationary systolic MAC array in SystemVerilog exploring the TPUv1 dataflow tradeoff at toy scale — real area, timing, and power from a Yosys/Nangate45/OpenSTA flow, plus a measured cycle-time comparison between the two dataflows under continuous streaming."
 tags: [SystemVerilog, "C++", Verilator, Yosys, OpenSTA]
-tracks: [ppa-analysis, verification]
+tracks: [ppa-analysis, verification, systolic-array]
 ---
 A small weight-stationary and output-stationary systolic MAC array, exploring
 the same architectural principle TPUv1 used at datacenter scale — a systolic
