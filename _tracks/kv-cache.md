@@ -6,11 +6,16 @@ status: Active
 color: "#C85C96"
 ---
 Transformer inference is increasingly bottlenecked by KV-cache memory
-bandwidth rather than compute. This track designs a small accelerator/memory
-subsystem targeting that access pattern — REPLACE_ME: scope (e.g. a
-custom-addressed scratchpad, quantized KV storage, or a prefetcher) —
-integrated as a memory-mapped peripheral off the core.
+bandwidth rather than compute. This track's end goal is a small
+accelerator/memory subsystem targeting that access pattern, integrated as a
+memory-mapped peripheral off the core — but that design only means something
+if it targets the *real* access pattern. Current phase, in
+[KV-Cache & Transformers](/projects/kv-cache-transformers/): run real
+transformer inference on a real GPU and profile what the cache actually
+does — growth per decode step, bandwidth, how it scales — before designing
+any hardware around it.
 
-**Why:** REPLACE_ME (e.g. "wanted to connect the processor-design work to a
+**Why:** wanted to connect the processor-design work on this site to a
 concrete, currently-relevant ML-systems bottleneck instead of only classic
-CPU microarchitecture").
+CPU microarchitecture — and to design the eventual accelerator against a
+measured workload, not an assumed one.
