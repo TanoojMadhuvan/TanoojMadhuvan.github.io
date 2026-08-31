@@ -857,16 +857,8 @@ a.track-badge:hover { text-decoration: none; filter: brightness(0.95); }
 }
 
 /* ---------------------------------------------------------------------------
-   Resume
+   Buttons
 --------------------------------------------------------------------------- */
-.resume-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-.resume-header h1 { margin: 0; }
 .button {
   display: inline-block;
   padding: 8px 16px;
@@ -880,23 +872,6 @@ a.track-badge:hover { text-decoration: none; filter: brightness(0.95); }
   transition: box-shadow 0.15s ease, transform 0.15s ease;
 }
 .button:hover { text-decoration: none; transform: translateY(-1px); box-shadow: var(--glow-amber); }
-
-.resume-page h2 {
-  margin-top: 1.8em;
-  padding-bottom: 6px;
-  border-bottom: 1px solid var(--border);
-}
-.resume-entry { margin: 1em 0 1.4em; }
-.resume-entry-title {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  flex-wrap: wrap;
-  font-weight: 650;
-}
-.resume-entry-sub { color: var(--text-muted); font-size: 0.9rem; margin: 2px 0 6px; }
-.resume-entry ul { margin: 0.4em 0 0; padding-left: 1.2em; }
-.resume-entry li { margin-bottom: 0.3em; }
 
 /* ---------------------------------------------------------------------------
    Footer

@@ -12,7 +12,6 @@ about.md            /about
 foundation.md       /foundation — static reference on the base RISC-V core
 tracks.md           /tracks — index of all research tracks
 blog.md             /blog — chronological feed of every post
-resume.md           /resume
 
 _tracks/             One file per research track (collection). Each file's
                       front matter (title, slug, summary, status, color) drives
@@ -26,7 +25,8 @@ _includes/track-icon.html    Inline SVG icon per track, keyed by slug
 _includes/social-icon.html   Inline SVG icons for GitHub/LinkedIn/email
 _includes/pipeline-diagram.html   The IF/ID/EX/MEM/WB SVG on the homepage
 assets/images/        Post images (including optional post cover images)
-assets/files/         Drop resume.pdf here for the /resume download button
+assets/files/         Tanooj_Kanike_Resume.docx — served by the homepage
+                      and /about "Download Resume" buttons
 ```
 
 **Theme:** Inter (body text) + JetBrains Mono (code, dates, badges, stat
@@ -134,12 +134,15 @@ GitHub Pages' supported list: `jekyll-feed`, `jekyll-seo-tag`,
 
 ## Before going live
 
-- [ ] Write the homepage intro paragraph (`index.md`)
-- [ ] Fill in the highlight bullets and stat-strip values in `index.md`'s
-      front matter (`highlights:` and `stats:`)
+- [x] Write the homepage intro paragraph (`index.md`)
+- [x] Fill in the highlight bullets and stat-strip values in `index.md`'s
+      front matter (`highlights:` and `stats:`) — real, measured numbers,
+      not placeholders
 - [x] Set `linkedin_username` in `_config.yml`
-- [ ] Fill in `about.md` and `resume.md`
-- [ ] Drop your real `resume.pdf` in `assets/files/`
+- [x] Fill in `about.md`
+- [x] Drop your real resume in `assets/files/` — there's no standalone
+      `/resume/` page anymore; the homepage and `/about` "Download Resume"
+      buttons link straight to the file
 - [x] Confirm the repo link in `foundation.md` — `github.com/tanooj-comp-arch/foundation-core`
 - [ ] Replace each track's `REPLACE_ME` intro/why text in `_tracks/`
 - [ ] Replace or delete the placeholder posts in `_posts/`
