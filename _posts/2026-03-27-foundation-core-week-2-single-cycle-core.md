@@ -1,6 +1,6 @@
 ---
 title: "Week 2: The single-cycle core comes together"
-date: 2026-01-19
+date: 2026-03-27
 project: foundation-core
 summary: "Wiring up the single-cycle datapath, getting per-module testbenches green, and a hardcoded path that's going to bite someone."
 ---

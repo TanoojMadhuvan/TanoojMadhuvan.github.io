@@ -1,6 +1,6 @@
 ---
 title: "Week 1: Scoping the ISA and setting up the toolchain"
-date: 2026-01-12
+date: 2026-03-20
 project: foundation-core
 summary: "Deciding what subset of RV64I to actually build first, and getting the assembler off the ground."
 ---

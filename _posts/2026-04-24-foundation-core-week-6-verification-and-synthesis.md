@@ -1,6 +1,6 @@
 ---
 title: "Week 6: Closing the loop — oracle, synthesis, timing, power"
-date: 2026-02-16
+date: 2026-04-24
 project: foundation-core
 tracks: [verification, ppa-analysis]
 summary: "The C++ oracle catches a real pipeline bug, then Yosys and OpenSTA give the first area, timing, and power numbers — dmem dominates all three."

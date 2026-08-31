@@ -1,6 +1,6 @@
 ---
 title: "Week 4: Forwarding and hazard detection"
-date: 2026-02-02
+date: 2026-04-10
 project: foundation-core
 summary: "Closing the data-hazard gaps forwarding structurally can't cover, and confirming the store-data path was already right."
 ---

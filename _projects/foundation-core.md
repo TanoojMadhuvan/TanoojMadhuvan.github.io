@@ -2,7 +2,7 @@
 title: "Foundation Core"
 slug: foundation-core
 index: "00"
-date_range: "Jan 12–Feb 16, 2026"
+date_range: "Mar 20–Apr 24, 2026"
 icon: 01-cpu
 subtitle: "Base RISC-V Core"
 summary: "The single-cycle and pipelined RISC-V core everything else builds on — assembler, forwarding, hazard detection."

@@ -2,7 +2,7 @@
 title: "SysMAC"
 slug: sysmac
 index: "01"
-date_range: "Mar 9–30, 2026"
+date_range: "May 15–Jun 5, 2026"
 icon: 04-memory-grid
 subtitle: "Systolic MAC Array"
 summary: "A weight-stationary vs. output-stationary PPA comparison on a small systolic MAC array, synthesized through Yosys/Nangate45 and measured with OpenSTA."

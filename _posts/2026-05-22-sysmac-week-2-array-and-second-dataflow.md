@@ -1,6 +1,6 @@
 ---
 title: "Week 2: From one PE to a 4x4 array — plus a second dataflow to compare against"
-date: 2026-03-16
+date: 2026-05-22
 project: sysmac
 tracks: [verification, systolic-array]
 summary: "Wiring mac_pe into an NxN grid via generate, a golden model that actually earns its keep, a full 4x4 matmul, and adding output-stationary for a fair PPA comparison."

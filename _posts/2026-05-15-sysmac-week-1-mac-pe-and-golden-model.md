@@ -1,6 +1,6 @@
 ---
 title: "Week 1: A weight-stationary MAC PE, an overflow assertion, and a golden model"
-date: 2026-03-09
+date: 2026-05-15
 project: sysmac
 tracks: [verification, systolic-array]
 summary: "Starting a systolic-array side project after a short break — the atomic PE tile, an immediate-assertion overflow check, and why the single-PE golden model barely earns its keep."

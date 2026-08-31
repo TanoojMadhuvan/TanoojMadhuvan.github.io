@@ -1,6 +1,6 @@
 ---
 title: "Week 5: Yeh & Patt's two-level predictor, wired in and measured"
-date: 2026-02-09
+date: 2026-04-17
 project: foundation-core
 tracks: [branch-prediction]
 summary: "GAg is live in the pipeline, it had a real bug of its own, and it's now measured — not estimated — on 20 RTL test programs."

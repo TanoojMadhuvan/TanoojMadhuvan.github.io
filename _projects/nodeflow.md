@@ -2,7 +2,7 @@
 title: "NodeFlow (RV32IM)"
 slug: nodeflow
 index: "03"
-date_range: "Apr 27–Jun 1, 2026"
+date_range: "Jul 25, 2026–ongoing"
 icon: 08-layers
 subtitle: "An HPS-style Restricted-Dataflow RISC-V Core"
 summary: "Extending the in-order pipeline toward out-of-order execution using HPS's restricted-dataflow model — node tables tracking a dataflow graph, not classic reservation stations."

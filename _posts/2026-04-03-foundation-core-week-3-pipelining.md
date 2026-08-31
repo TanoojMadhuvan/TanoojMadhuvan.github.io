@@ -1,6 +1,6 @@
 ---
 title: "Week 3: Splitting the datapath into a 5-stage pipeline"
-date: 2026-01-26
+date: 2026-04-03
 project: foundation-core
 summary: "IF/ID/EX/MEM/WB, four pipeline registers, and figuring out exactly what a taken branch needs to squash."
 ---
