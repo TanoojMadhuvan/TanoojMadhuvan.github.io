@@ -2,25 +2,38 @@
 layout: home
 title: ""
 role: "Computer Architecture & Hardware Engineering Student"
-# NOTE: branch accuracy / IPC / L1 cache / perf-vs-baseline below are placeholder
-# numbers (not yet measured — branch-prediction/OoO tracks just started, and this
-# core has no cache hierarchy yet). Swap in real benchmark results once you have them.
+# NOTE: real, measured numbers, not placeholders.
+# - accuracy/IPC/speedup: RTL-measured on the pipelined core via Verilator, 20
+#   hand-written programs, oracle-verified on/off with the predictor
+#   (foundation-core/BRANCH_PREDICTOR_PERFORMANCE.md). Accuracy is the
+#   steady-state headline case (520-iter loop, mispred 99.8%->2.7% once the
+#   GAg table trains up), not a blanket average -- the full 20-program suite
+#   deliberately includes adversarial/one-shot cases that sit near a 50%
+#   coin-flip floor by design, which isn't a single flattering percentage.
+# - power: SysMAC's output-stationary vs. weight-stationary comparison, real
+#   Yosys/Nangate45/OpenSTA synthesis (SysMAC README).
+# - this core has no cache hierarchy, so there is deliberately no cache stat here.
 stats:
-  - value: "97%"
-    label: "branch prediction accuracy"
+  - value: "97.3%"
+    label: "steady-state branch accuracy"
     icon: 06-target
+    color: teal
   - value: "5"
     label: "stage pipeline"
     icon: 02-pipeline
-  - value: "2.81"
-    label: "IPC (sim avg)"
+    color: orange
+  - value: "0.64"
+    label: "IPC (measured avg)"
     icon: 03-gauge
-  - value: "128KB"
-    label: "L1 cache size"
-    icon: 04-memory-grid
-  - value: "1.43x"
-    label: "performance vs. baseline"
+    color: teal
+  - value: "38%"
+    label: "lower power (SysMAC dataflow)"
+    icon: 10-fpga-gate
+    color: orange
+  - value: "1.19x"
+    label: "faster vs. no branch predictor"
     icon: 05-trending-up
+    color: teal
   - value: "45nm"
     label: "target process node"
     icon: 01-cpu
