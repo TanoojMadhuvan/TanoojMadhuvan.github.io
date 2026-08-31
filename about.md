@@ -14,8 +14,8 @@ is a slide deck.
 <p><a class="button" href="{{ '/assets/files/Tanooj_Kanike_Resume.docx' | relative_url }}" download>Download Resume</a></p>
 
 <figure>
-  <img src="{{ '/assets/images/about-infravision-drone.jpg' | relative_url }}" alt="Tanooj standing behind a large octocopter UAV in a warehouse at Infravision">
-  <figcaption>The Valkyrie 100 — the octocopter I do firmware bring-up on at Infravision.</figcaption>
+  <img src="{{ '/assets/images/about-infravision-drone.jpg' | relative_url }}" alt="Tanooj standing behind a large coaxial hexacopter UAV in a warehouse at Infravision">
+  <figcaption>The Valkyrie 100 — the coaxial hexacopter I do firmware bring-up on at Infravision.</figcaption>
 </figure>
 
 ## What I've built
