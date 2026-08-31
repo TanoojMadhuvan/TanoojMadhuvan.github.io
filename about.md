@@ -67,6 +67,11 @@ Along the way I picked up GPS integration, radar testing, secondary radio
 bring-up, and gimbal/payload validation outside my original scope, mostly
 by asking where else I could be useful.
 
+<figure>
+  <img src="{{ '/assets/images/about-infravision-bench.jpg' | relative_url }}" alt="Tanooj at a workbench debugging a PCB with a power supply, oscilloscope probe, and laptop">
+  <figcaption>Bench debugging at Infravision — power supply, oscilloscope probe, and a schematic on the side.</figcaption>
+</figure>
+
 ## Before all this
 FTC robotics (competition programming, computer vision pipelines),
 full-stack development, and hackathon leadership, including a top finish
