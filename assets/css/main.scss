@@ -816,6 +816,15 @@ a.track-badge:hover { text-decoration: none; filter: brightness(0.95); }
   color: var(--text-muted);
   margin-top: 6px;
 }
+.page figure { margin: 1.6em 0; }
+.page figure img { width: 100%; display: block; border-radius: 8px; }
+.page figcaption {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+.lab-logo { max-width: 320px; display: block; margin: 1.2em 0; border-radius: 6px; }
 .post-content blockquote {
   margin: 1.4em 0;
   padding: 0.2em 1.2em;
