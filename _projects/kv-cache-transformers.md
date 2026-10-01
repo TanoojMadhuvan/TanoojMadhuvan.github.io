@@ -5,7 +5,7 @@ index: "02"
 date_range: "Jul 21, 2026–ongoing"
 icon: 09-database
 subtitle: "KVRoof: A Roofline Model for KV-Cache Memory Pressure"
-summary: "A roofline-style model of when a transformer's KV-cache outgrows on-chip SRAM under continuous decode, and how much GQA/MQA, H2O eviction, and KVQuant quantization each buy back before that cliff — the closed-form formula calibrated against a real Hugging Face model first."
+summary: "A roofline-style model of the exact decode step where a transformer's growing KV-cache stops fitting in on-chip SRAM and every step drops to HBM bandwidth. A two-tier SRAM/HBM sweep measures how far GQA/MQA, H2O eviction, and 4-bit KVQuant each push that cliff out versus a full-precision baseline — with the closed-form cache-size formula first calibrated against a real Hugging Face model's past_key_values."
 description: "Models the KV-cache memory-hierarchy cliff directly: given a fixed on-chip SRAM budget, where does an accelerator's KV-cache stop fitting on-chip and force it into HBM-bandwidth-bound territory, and how much do GQA/MQA, H2O eviction, and KVQuant quantization each delay that cliff. The closed-form formula behind the sweep is calibrated against real Hugging Face model output before being trusted, rather than assumed."
 tags: [Python, PyTorch, Transformers, Matplotlib]
 tracks: [kv-cache]
