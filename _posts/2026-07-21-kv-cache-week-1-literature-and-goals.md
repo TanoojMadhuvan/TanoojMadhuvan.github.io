@@ -1,4 +1,5 @@
 ---
+published: false  # temporarily hidden — remove this line to restore
 title: "Week 1: Why KV-cache, and why this needs a real GPU"
 date: 2026-07-21
 project: kv-cache-transformers

@@ -1,4 +1,5 @@
 ---
+published: false  # temporarily hidden — remove this line to restore
 title: "Week 4: The policy sweep, and where the cliff actually moves"
 date: 2026-08-29
 project: kv-cache-transformers

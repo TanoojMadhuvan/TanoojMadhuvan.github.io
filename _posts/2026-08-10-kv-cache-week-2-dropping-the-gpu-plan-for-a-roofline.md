@@ -1,4 +1,5 @@
 ---
+published: false  # temporarily hidden — remove this line to restore
 title: "Week 2: Dropping the GPU-profiling plan for a roofline model"
 date: 2026-08-10
 project: kv-cache-transformers

@@ -1,4 +1,5 @@
 ---
+published: false  # temporarily hidden — remove this line to restore
 title: "NodeFlow (RV32IM)"
 slug: nodeflow
 index: "03"

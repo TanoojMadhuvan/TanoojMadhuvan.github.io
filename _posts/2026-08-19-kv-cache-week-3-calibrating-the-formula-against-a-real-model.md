@@ -1,4 +1,5 @@
 ---
+published: false  # temporarily hidden — remove this line to restore
 title: "Week 3: Calibrating the closed-form formula against a real model"
 date: 2026-08-19
 project: kv-cache-transformers

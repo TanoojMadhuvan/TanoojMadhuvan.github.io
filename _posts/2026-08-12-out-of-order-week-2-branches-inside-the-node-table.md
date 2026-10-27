@@ -1,4 +1,5 @@
 ---
+published: false  # temporarily hidden — remove this line to restore
 title: "Week 2: Branches inside the node-table model"
 date: 2026-08-12
 project: nodeflow

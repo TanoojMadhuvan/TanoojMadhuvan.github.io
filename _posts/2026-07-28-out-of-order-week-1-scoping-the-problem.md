@@ -1,4 +1,5 @@
 ---
+published: false  # temporarily hidden — remove this line to restore
 title: "Week 1: Choosing HPS over Tomasulo"
 date: 2026-07-28
 project: nodeflow

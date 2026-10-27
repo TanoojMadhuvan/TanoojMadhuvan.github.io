@@ -1,4 +1,5 @@
 ---
+published: false  # temporarily hidden — remove this line to restore
 title: "Week 3: Precise exceptions without a reorder buffer"
 date: 2026-08-21
 project: nodeflow

@@ -1,4 +1,5 @@
 ---
+published: false  # temporarily hidden — remove this line to restore
 title: "Week 4: Memory disambiguation — and a bug the golden checks caught"
 date: 2026-08-30
 project: nodeflow

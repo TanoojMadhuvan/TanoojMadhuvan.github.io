@@ -1,4 +1,5 @@
 ---
+published: false  # temporarily hidden — remove this line to restore
 title: "KV-Cache & Transformers"
 slug: kv-cache-transformers
 index: "02"
